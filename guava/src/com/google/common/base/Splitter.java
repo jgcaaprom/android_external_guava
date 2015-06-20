@@ -387,8 +387,9 @@ public final class Splitter {
 
     return new Iterable<String>() {
       @Override public Iterator<String> iterator() {
-        return splittingIterator(sequence);
+        return Splitter.this.splittingIterator(sequence);
       }
+      
       @Override public String toString() {
         return Joiner.on(", ")
             .appendTo(new StringBuilder().append('['), this)
